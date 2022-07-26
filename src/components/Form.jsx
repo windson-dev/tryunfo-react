@@ -67,6 +67,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="cardImage">
+          Imagem:
           <input
             type="text"
             data-testid="image-input"
