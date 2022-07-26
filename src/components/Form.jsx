@@ -5,11 +5,10 @@ class Form extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo, isSaveButtonDisabled,
-      onInputChange, onSaveButtonClick } = this.props;
+      onInputChange, onSaveButtonClick, hasTrunfo } = this.props;
 
     return (
-
-      <form>
+      <form className="form-container">
         <label htmlFor="cardName">
           Nome
           <input
@@ -89,16 +88,18 @@ class Form extends React.Component {
           <option>muito raro</option>
         </select>
 
-        <label htmlFor="cardTrunfo">
-          <input
-            type="checkbox"
-            data-testid="trunfo-input"
-            name="cardTrunfo"
-            checked={ cardTrunfo }
-            onChange={ onInputChange }
-          />
-          Super Trybe Trunfo
-        </label>
+        {!hasTrunfo ? (
+          <label htmlFor="cardTrunfo">
+            <input
+              type="checkbox"
+              data-testid="trunfo-input"
+              name="cardTrunfo"
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
+            />
+            Super Trybe Trunfo
+          </label>
+        ) : <p> Você já tem um Super Trunfo em seu baralho </p>}
 
         <button
           disabled={ isSaveButtonDisabled }
@@ -109,10 +110,8 @@ class Form extends React.Component {
           {' '}
           Salvar
           {' '}
-
         </button>
       </form>
-
     );
   }
 }
@@ -126,7 +125,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
