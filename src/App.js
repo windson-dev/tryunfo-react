@@ -25,8 +25,8 @@ class App extends React.Component {
 
     if (Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) <= twoHundredAndTen
       && Number(cardAttr1) <= ninety && Number(cardAttr2) <= ninety
-      && Number(cardAttr2) <= ninety && Number(cardAttr3) >= zero
-      && Number(cardAttr3) >= zero && Number(cardAttr1) >= zero
+      && Number(cardAttr3) <= ninety && Number(cardAttr1) >= zero
+      && Number(cardAttr2) >= zero && Number(cardAttr3) >= zero
       && cardName.length !== 0 && cardDescription.length !== 0 && cardImage.length !== 0
     ) {
       return false;

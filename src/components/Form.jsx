@@ -9,7 +9,7 @@ class Form extends React.Component {
 
     return (
 
-      <form>
+      <form className="form-container">
         <label htmlFor="cardName">
           Nome
           <input
