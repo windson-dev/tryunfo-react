@@ -8,6 +8,7 @@ class Form extends React.Component {
       onInputChange, onSaveButtonClick, hasTrunfo } = this.props;
 
     return (
+
       <form className="form-container">
         <label htmlFor="cardName">
           Nome

@@ -1,6 +1,6 @@
 import React from 'react';
-import Form from './components/Form';
 import Card from './components/Card';
+import Form from './components/Form';
 
 class App extends React.Component {
   constructor() {
@@ -38,6 +38,7 @@ class App extends React.Component {
     ) {
       return false;
     }
+
     return true;
   }
 
@@ -47,7 +48,7 @@ class App extends React.Component {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo } = this.state;
 
-    const sideStateSave = {
+    const myobj = {
       a: cardName,
       b: cardDescription,
       c: cardAttr1,
@@ -59,7 +60,7 @@ class App extends React.Component {
     };
 
     this.setState((element) => ({
-      cardContent: [...element.cardContent, sideStateSave],
+      cardContent: [...element.cardContent, myobj],
       cardName: '',
       cardDescription: '',
       cardImage: '',
